@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sammy — Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+
+    <div class="container header-row">
+      <a class="brand" href="index.html">Sammy Martiniano</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Trabalho</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- seção de introdução grande com imagem de fundo -->
+  <main>
+    <section id="home" class="hero hero-bg">
+      <div class="container">
+        <div class="hero-inner">
+          <h1>Design de interiores</h1>
+          <p class="lead"> uma trajetória construída com curiosidade, sensibilidade e propósito</p>
+          <p><a class="btn" href="projetos.html">Meu trabalho</a></p>
+        </div>
+      </div>
+    </section>
+    <br>
+
+    <section id="inspiracao" class="container inspiracao">
+      <h1>Inspirações e referências</h1>
+      <div class="grid">
+        <article class="card">
+          <img src="img/img (13).jpg" alt="Inspo 1">
+          <h3>Zaha Hadid</h3>
+          <p>Uma arquiteta visionária conhecida por seus projetos futuristas, com formas curvilíneas e ousadas que revolucionaram a arquitetura contemporânea.</p>
+        </article>
+
+        <article class="card">
+          <img src="img/img (12).jpg" alt="Inspo 2">
+          <h3>Celeste Boursier-Mougenot</h3>
+          <p>Uma artista francês que cria instalações sonoras e experimentais, transformando objetos e elementos do cotidiano em experiências musicais imersivas.</p>
+        </article>
+
+        <article class="card">
+          <img src="img/img (11).jpg" alt="Inspo 3">
+          <h3>Estúdio Galho</h3>
+          <p>Localizado em João Pessoa/PB, valoriza e explora o regionalismo e a riqueza cultural do nosso país.</p>
+        </article>
+      </div>
+    </section>
+    <br>
+
+    <section id="sobre" class="container sobre">
+      <h1>Sammy como designer</h1>
+      <p>Sou uma pessoa curiosa e apaixonada por transformar ideias em espaços cheios de significado. 
+        <br>No design de interiores encontrei uma forma de unir <b>sensibilidade e propósito</b>, criando ambientes que despertam <b>emoção e identidade</b>. 
+        <br><br>Acredito que o design vai além da estética, é sobre sentir, acolher e dar vida ao que inspira.
+      </p>
+      <p class="small">É uma forma de traduzir ideias em experiências visuais e sensoriais que unem estética, funcionalidade e significado</p>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <div class="container footer-row">
+      <div>
+        <p>Contato: <a href="mailto:samilly.martiniano@yahoo.com.br">samilly.martiniano@yahoo.com.br</a></p>
+        <p class="small">Redes: <a href="#">Instagram</a> • WhatsApp: (83) 98703-3622</p>
+      </div>
+      <p class="small">&copy; <span id="year"></span> Sammy — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    (function(){
+      const hero = document.querySelector('.hero-bg');
+      if(!hero) return;
+      // reduce intensity on touch devices
+      const isTouch = matchMedia('(pointer:coarse)').matches;
+      const speed = isTouch ? 0.08 : 0.22; // parallax factor
+      let ticking = false;
+
+      function update(){
+        const rect = hero.getBoundingClientRect();
+        // calculate offset while hero is on screen
+        const offset = Math.round(-rect.top * speed);
+        hero.style.backgroundPosition = `center ${offset}px`;
+      }
+
+      function onScroll(){
+        if(!ticking){
+          window.requestAnimationFrame(()=>{ update(); ticking = false; });
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, {passive:true});
+      window.addEventListener('resize', onScroll);
+      // init
+      update();
+    })();
+  </script>
+</body>
+</html>

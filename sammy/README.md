@@ -1,0 +1,1 @@
+Projeto para a segunda avaliação da disciplina de front-end. Desenvolvimento do um portifólio web dinâmico para aluno de Design de interiores.

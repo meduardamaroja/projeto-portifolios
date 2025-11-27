@@ -8,7 +8,6 @@
   --accent-rgb: 129,33,33; 
   --radius: 6px;
 
-  /* aumentado para mostrar a imagem inteira em telas maiores */
   --proj-img-w: 520px;
   --proj-img-h: 360px;
 }
@@ -114,17 +113,17 @@ nav a:hover{color:var(--accent)}
   transform: translateY(-6px);
   box-shadow: 0 16px 36px rgba(0,0,0,.06);
 }
-/* imagens: aumentar e mostrar inteiras, centralizadas; responsivo via max-width */
+
 .project-list img,
 .hero img,
 .habilidades img,
 .card img {
   width: 100%;
-  max-width: var(--proj-img-w); /* limite em desktop */
-  height: auto;                 /* mantém proporção e mostra a imagem inteira */
-  object-fit: contain;          /* evita recorte (mostra a imagem completa) */
+  max-width: var(--proj-img-w); 
+  height: auto;               
+  object-fit: contain;         
   display: block;
-  margin: .6rem auto;           /* centraliza */
+  margin: .6rem auto;
   border-radius: var(--radius);
   transition: transform .25s ease, box-shadow .2s ease;
 }
@@ -132,7 +131,7 @@ nav a:hover{color:var(--accent)}
 .hero img:hover,
 .habilidades img:hover,
 .card img:hover {
-  transform: scale(1.03);
+  transform: scale(1.8);
   box-shadow: 0 10px 30px rgba(0,0,0,.08);
 }
 
@@ -162,7 +161,6 @@ footer a:hover{color:var(--accent)}
 .text-center{text-align:center}
 .small{font-size:.9rem; color:var(--muted)}
 
-/* todos os links herdam a cor do elemento pai */
 a { color: inherit; }
 a:hover { color: var(--accent); }
 
