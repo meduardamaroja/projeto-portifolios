@@ -1,0 +1,67 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to left,#44238C, #1E0F40);
+}
+
+header{
+    margin-bottom: 200px;
+}
+
+.img_amanda{
+    border-top-right-radius: 10%;
+    height:550px;
+    width: 450px;
+    margin-left: -100px;
+}
+
+.sobre_mim_title{
+    color: #5cff43;
+    font-family: fantasy,Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    text-decoration: line-through;
+    font-size: 30px;
+    text-align: center;
+}
+
+.sobre_mim_paragrafo{
+    color: white;
+    font-style: italic;
+    font-size: 14px;
+    width: 40%;
+    margin-left: 15%;
+}
+
+.sobre_mim_destaque_graduacao{
+    color: white;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 19px;
+    width: 40%;
+    margin-left: 15%;
+}
+
+.sobre_mim_title_direita{
+    color: #5cff43;
+    font-family: fantasy,Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    text-decoration: line-through;
+    font-size: 30px;
+    text-align: right;
+}
+
+.sobre_container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+
+.sobre_coluna {
+    width: 50%;
+}
+
+
+.direita {
+    text-align: right;
+}
