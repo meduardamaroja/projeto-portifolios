@@ -1,6 +1,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(to left,#44238C, #1E0F40);
+    /* Degradê: roxo escuro -> roxo claro -> preto (claro no meio) */
+    background: linear-gradient(90deg, #1b0026 20%, #000000 40%, #7a4bd6 100%);
 }
 
 header{
@@ -149,5 +150,167 @@ header{
 
 .progress-bar.figma {
     width: 80%;
+}
+
+.indice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 80px;      
+    padding: 20px 50px;
+    margin: 60px auto;   
+    align-items: start;
+    max-width: 1000px;
+    justify-content: center;
+}
+
+.indice > .campanhas   { grid-column: 1; grid-row: 1; }
+.indice > .branding    { grid-column: 1; grid-row: 2; }
+.indice > .media       { grid-column: 2; grid-row: 1; }
+.indice > .editorial   { grid-column: 2; grid-row: 2; }
+
+.indice > div {
+    color: #fff;
+    background: transparent;
+    padding: 14px 8px;  
+    text-align: center;
+}
+
+.indice h1 {
+    color: #5cff43;
+    font-family: fantasy, Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    text-decoration: line-through;
+    margin: 0 0 6px 0;
+}
+
+.indice h2 {
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+}
+
+.indice p {
+    color: #fff;
+    margin: 2px 0;
+}
+
+section.campanhas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 960px;
+}
+
+section.campanhas h1 {
+    color: #5cff43;
+    font-family: fantasy, Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    text-decoration: line-through;
+    margin: 0;
+}
+
+section.campanhas img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.liquida {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    padding: 30px 50px;
+    max-width: 1200px;
+    margin: 40px auto;
+    justify-content: space-between;
+}
+
+/* coluna de imagens: maior proporção e conteúdo colado à direita */
+.liquida_imagens {
+    flex: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+/* card principal: aumentado */
+.liquida_imagens .card_lqd {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* pequenas: alinhadas à direita */
+.liquida_imagens img:not(.card_lqd) {
+    width: 48%;
+    max-width: 420px;
+    height: auto;
+    display: inline-block;
+    align-self: flex-end;
+}
+
+/* coluna direita: sobre_liquida (menor proporção) */
+.sobre_liquida {
+    flex: 1;                  /* ~40% */
+    text-align: right;        /* texto alinhado à direita */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* títulos */
+.sobre_liquida h1, .sobre_liquida h3 {
+    margin: 0;
+    color: #fff;
+}
+
+.sobre_liquida h1 {
+    color: #5cff43;
+    font-family: fantasy, Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    text-decoration: line-through;
+    margin: 0 0 6px 0;
+}
+
+/* aplica mesmo estilo ao h5 */
+.sobre_liquida h5 {
+    color: #5cff43;
+    font-family: fantasy, Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    text-decoration: line-through;
+    margin: 0 0 6px 0;
+}
+
+.sobre_liquida p {
+    color: #ffffff;
+    margin: 0;
+    font-size: 19px
+}
+
+/* responsivo: empilha verticalmente em telas pequenas */
+@media (max-width: 900px) {
+    .liquida {
+        flex-direction: column;
+        padding: 16px;
+    }
+    .liquida_imagens,
+    .sobre_liquida {
+        flex: none;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+    .sobre_liquida { text-align: center; }
+    .liquida_imagens img:not(.card_lqd) { width: 40%; }
+    .liquida_imagens .card_lqd { max-width: 90%; }
 }
 
